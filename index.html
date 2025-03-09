@@ -61,7 +61,7 @@
             background-color: #0056b3;
         }
 
-        #descricao, #dengue-descricao {
+        #descricao, #dengue-descricao, #queimadura-descricao, #covid-descricao {
             margin-top: 20px;
             padding: 15px;
             border: 1px solid #ccc;
@@ -81,6 +81,8 @@
                 <option value="">Selecione uma opção</option>
                 <option value="cancer">Tratamento de Câncer</option>
                 <option value="dengue">Dengue</option>
+                <option value="queimadura">Queimadura de Terceiro Grau</option>
+                <option value="covid">COVID-19</option> <!-- Nova opção para COVID-19 -->
             </select>
             <button class="search-button">Buscar</button>
         </div>
@@ -88,7 +90,6 @@
         <div id="descricao">
             <h3>Descrição do Tratamento de Câncer</h3>
             <p>O tratamento para o câncer pode variar dependendo do tipo, estágio e localização do câncer, além das condições gerais de saúde do paciente. Aqui estão alguns dos principais tratamentos utilizados no combate ao câncer:</p>
-            
             <ul>
                 <li><strong>Cirurgia:</strong> A cirurgia é frequentemente usada para remover tumores sólidos ou partes do corpo que contêm câncer. Pode ser realizada com o objetivo de curar, aliviar sintomas ou diagnosticar o câncer (biópsia).</li>
                 <li><strong>Radioterapia:</strong> A radioterapia usa radiação para destruir células cancerígenas ou encolher tumores. É aplicada localmente na área afetada e pode ser combinada com outros tratamentos, como cirurgia ou quimioterapia.</li>
@@ -98,7 +99,6 @@
             </ul>
         </div>
 
-        <!-- Novo Bloco para o caso de Dengue -->
         <div id="dengue-descricao">
             <h3>Dengue - Sintomas e Tratamento</h3>
             <p>A Dengue é uma doença viral transmitida pelo mosquito Aedes aegypti. Seus sintomas iniciais podem ser semelhantes a outras doenças virais, como febre e dores no corpo. No entanto, em casos mais graves, a doença pode evoluir para a Dengue Hemorrágica. Aqui estão alguns dos sintomas e sinais que podem ser indicativos de Dengue:</p>
@@ -112,6 +112,32 @@
             <h4>Alerta para médicos:</h4>
             <p>Em um surto de dengue, como o recente no Guarujá, é importante considerar casos onde sintomas como sangramento nasal possam ser sinais de dengue hemorrágica, especialmente quando o paciente está apresentando piora rápida.</p>
         </div>
+
+        <div id="queimadura-descricao">
+            <h3>Tratamento para Queimadura de Terceiro Grau</h3>
+            <p>O tratamento de queimaduras de terceiro grau pode ser complexo e doloroso, mas existem alternativas inovadoras. Um dos tratamentos mais recentes é o uso de pele de tilápia para reconstrução do tecido queimado.</p>
+            <h4>Benefícios do uso da pele de tilápia:</h4>
+            <ul>
+                <li><strong>Alívio da dor:</strong> Como a pele do peixe permanece sobre a queimadura por vários dias, ela ajuda a evitar a troca constante de curativos, aliviando a dor associada à remoção do curativo.</li>
+                <li><strong>Menos trabalho e custos:</strong> Ao reduzir a necessidade de trocas diárias de curativo, o tratamento diminui os custos e o trabalho envolvido na troca constante de curativos.</li>
+                <li><strong>Promove a regeneração da pele:</strong> A pele de tilápia tem propriedades que ajudam na regeneração do tecido e na cicatrização das queimaduras.</li>
+            </ul>
+            <p>Este procedimento foi desenvolvido pelo cirurgião plástico Edmar Maciel e pode ser uma solução eficaz para os pacientes que sofrem com queimaduras graves.</p>
+        </div>
+
+        <!-- Novo Bloco para COVID-19 -->
+        <div id="covid-descricao">
+            <h3>Pesquisa e Tratamento de COVID-19</h3>
+            <p>A COVID-19, causada pelo coronavírus SARS-CoV-2, se espalhou rapidamente pelo mundo, exigindo uma resposta urgente da comunidade científica. Com o CURE.IA, os pesquisadores podem acessar dados sobre casos semelhantes, estudos prévios, tratamentos e avanços na pesquisa.</p>
+            <h4>Como o CURE.IA pode ajudar:</h4>
+            <ul>
+                <li><strong>Aceleração da pesquisa:</strong> Com o acesso a dados de vários estudos sobre COVID-19, os pesquisadores podem identificar padrões e realizar comparações rápidas entre tratamentos e resultados.</li>
+                <li><strong>Intercâmbio de informações:</strong> A plataforma ajuda a criar um banco de dados de pesquisa compartilhado, onde diferentes laboratórios e pesquisadores podem colaborar mais facilmente, evitando duplicação de esforços.</li>
+                <li><strong>Casos semelhantes:</strong> A plataforma pode identificar outras doenças respiratórias ou virais, permitindo que os pesquisadores estudem casos semelhantes e usem tratamentos já testados em outras doenças.</li>
+                <li><strong>Prevenção e vacinas:</strong> A plataforma oferece acesso a dados sobre vacinas e tratamentos em desenvolvimento, ajudando a acelerar a criação de soluções eficazes contra a COVID-19.</li>
+            </ul>
+            <p>O CURE.IA pode encurtar o caminho para a cura, ajudando pesquisadores a compreenderem melhor a doença e a trabalhar de forma mais colaborativa e eficiente, reduzindo o tempo de desenvolvimento de tratamentos e prevenindo futuras mortes.</p>
+        </div>
     </div>
 
     <script>
@@ -121,17 +147,24 @@
             // Limpar as exibições anteriores
             document.getElementById("descricao").style.display = "none";
             document.getElementById("dengue-descricao").style.display = "none";
+            document.getElementById("queimadura-descricao").style.display = "none"; // Adicionado para queimadura
+            document.getElementById("covid-descricao").style.display = "none"; // Adicionado para COVID-19
 
             // Verificar qual opção foi escolhida
             if (searchQuery === "cancer") {
                 document.getElementById("descricao").style.display = "block";
             } else if (searchQuery === "dengue") {
                 document.getElementById("dengue-descricao").style.display = "block";
+            } else if (searchQuery === "queimadura") {
+                document.getElementById("queimadura-descricao").style.display = "block";
+            } else if (searchQuery === "covid") {
+                document.getElementById("covid-descricao").style.display = "block";
             }
         });
     </script>
 </body>
 </html>
+
 
 
 
