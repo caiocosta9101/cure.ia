@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURE.IA</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .search-input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
+        #descricao {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: none;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">CURE.IA</div>
+        <div class="search-bar">
+            <input type="text" id="search" class="search-input" placeholder="Tratamento de câncer">
+            <button class="search-button">Buscar</button>
+        </div>
+
+        <div id="descricao">
+            <h3>Descrição do Tratamento de Câncer</h3>
+            <p>O tratamento para o câncer pode variar dependendo do tipo, estágio e localização do câncer, além das condições gerais de saúde do paciente. Aqui estão alguns dos principais tratamentos utilizados no combate ao câncer:</p>
+            
+            <ul>
+                <li><strong>Cirurgia:</strong> A cirurgia é frequentemente usada para remover tumores sólidos ou partes do corpo que contêm câncer. Pode ser realizada com o objetivo de curar, aliviar sintomas ou diagnosticar o câncer (biópsia).</li>
+                <li><strong>Radioterapia:</strong> A radioterapia usa radiação para destruir células cancerígenas ou encolher tumores. É aplicada localmente na área afetada e pode ser combinada com outros tratamentos, como cirurgia ou quimioterapia.</li>
+                <li><strong>Quimioterapia:</strong> A quimioterapia envolve o uso de medicamentos para destruir células cancerígenas. Ela pode ser administrada por via oral ou intravenosa e afeta todo o corpo, sendo eficaz para tratar cânceres que se espalharam para outras partes do corpo.</li>
+                <li><strong>Imunoterapia:</strong> A imunoterapia ajuda o sistema imunológico a identificar e destruir células cancerígenas. Ela pode ser usada em alguns tipos de câncer, como melanoma, câncer de pulmão, câncer de bexiga, entre outros.</li>
+                <li><strong>Terapia alvo:</strong> A terapia alvo utiliza medicamentos que atacam especificamente células cancerígenas, minimizando danos às células saudáveis.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector(".search-button").addEventListener("click", function() {
+            document.getElementById("descricao").style.display = "block";
+        });
+    </script>
+</body>
+</html>
+
