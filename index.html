@@ -37,12 +37,13 @@
             margin-top: 20px;
         }
 
-        .search-input {
+        select {
             padding: 10px;
             width: 300px;
             border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 16px;
+            cursor: pointer;
         }
 
         .search-button {
@@ -60,7 +61,7 @@
             background-color: #0056b3;
         }
 
-        #descricao {
+        #descricao, #dengue-descricao {
             margin-top: 20px;
             padding: 15px;
             border: 1px solid #ccc;
@@ -75,7 +76,12 @@
     <div class="container">
         <div class="header">CURE.IA</div>
         <div class="search-bar">
-            <input type="text" id="search" class="search-input" placeholder="Tratamento de câncer">
+            <!-- Barra de seleção (select) -->
+            <select id="search">
+                <option value="">Selecione uma opção</option>
+                <option value="cancer">Tratamento de Câncer</option>
+                <option value="dengue">Dengue</option>
+            </select>
             <button class="search-button">Buscar</button>
         </div>
 
@@ -91,13 +97,41 @@
                 <li><strong>Terapia alvo:</strong> A terapia alvo utiliza medicamentos que atacam especificamente células cancerígenas, minimizando danos às células saudáveis.</li>
             </ul>
         </div>
+
+        <!-- Novo Bloco para o caso de Dengue -->
+        <div id="dengue-descricao">
+            <h3>Dengue - Sintomas e Tratamento</h3>
+            <p>A Dengue é uma doença viral transmitida pelo mosquito Aedes aegypti. Seus sintomas iniciais podem ser semelhantes a outras doenças virais, como febre e dores no corpo. No entanto, em casos mais graves, a doença pode evoluir para a Dengue Hemorrágica. Aqui estão alguns dos sintomas e sinais que podem ser indicativos de Dengue:</p>
+            <ul>
+                <li><strong>Febre alta súbita:</strong> A febre é um dos sintomas mais comuns da dengue.</li>
+                <li><strong>Dor no corpo:</strong> Dor intensa no corpo, principalmente nas articulações e músculos.</li>
+                <li><strong>Manchas vermelhas na pele:</strong> Surgimento de erupções cutâneas.</li>
+                <li><strong>Sangramentos:</strong> Pode ocorrer sangramento nas gengivas, nariz ou até mesmo hemorragias internas.</li>
+                <li><strong>Dengue Hemorrágica:</strong> A forma mais grave da dengue, com risco de sangramentos, falência de órgãos e até mesmo morte.</li>
+            </ul>
+            <h4>Alerta para médicos:</h4>
+            <p>Em um surto de dengue, como o recente no Guarujá, é importante considerar casos onde sintomas como sangramento nasal possam ser sinais de dengue hemorrágica, especialmente quando o paciente está apresentando piora rápida.</p>
+        </div>
     </div>
 
     <script>
         document.querySelector(".search-button").addEventListener("click", function() {
-            document.getElementById("descricao").style.display = "block";
+            var searchQuery = document.getElementById("search").value;
+            
+            // Limpar as exibições anteriores
+            document.getElementById("descricao").style.display = "none";
+            document.getElementById("dengue-descricao").style.display = "none";
+
+            // Verificar qual opção foi escolhida
+            if (searchQuery === "cancer") {
+                document.getElementById("descricao").style.display = "block";
+            } else if (searchQuery === "dengue") {
+                document.getElementById("dengue-descricao").style.display = "block";
+            }
         });
     </script>
 </body>
 </html>
+
+
 
